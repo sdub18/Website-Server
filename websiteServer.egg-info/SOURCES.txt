@@ -1,0 +1,9 @@
+setup.py
+websiteServer/__init__.py
+websiteServer/articleRoutes.py
+websiteServer/models.py
+websiteServer.egg-info/PKG-INFO
+websiteServer.egg-info/SOURCES.txt
+websiteServer.egg-info/dependency_links.txt
+websiteServer.egg-info/requires.txt
+websiteServer.egg-info/top_level.txt
