@@ -14,4 +14,14 @@ from websiteServer.models import Article
 # MARK: POST Article to database
 @app.route('/articles', methods=['GET'])
 def getArticles():
+    firstArticle = Article.query.first()
+    print(firstArticle)
     return jsonify({'test': 'This did work!'})
+
+@app.route('/articles', methods=['POST'])
+def postArticle():
+    data = request.get_json()
+    article = Article(title='dad', subtitle='icecream')
+    db.session.add(article)
+    db.session.commit()
+    return "Success", 200
