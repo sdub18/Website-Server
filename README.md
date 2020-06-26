@@ -10,6 +10,11 @@ For Hosting and Deployment I really want to step out of my comfort zone. So my g
 Great question. While the goal is to make this my actual backend, I really think the code here not only displays my ability to code in languages other than Swift (the main language I've used on my github), but I also hope to make it an easy how-to-guide for anyone looking to learn about backend servers or designing websites from scratch. And hopefully it does just that :)
 
 ## 🧮 Current Status of Project
-- [ ] Initialize Github Repo
-- [ ] Setup Flask
+- [x] Initialize Github Repo
+- [x] Setup Flask
 - [ ] Setup Sql-Alchemy
+
+## Dependencies Used in the Making of this Server ...
+  - Flask
+  - Marshmallow
+  - SQLAlchemy  
