@@ -12,9 +12,22 @@ Great question. While the goal is to make this my actual backend, I really think
 ## 🧮 Current Status of Project
 - [x] Initialize Github Repo
 - [x] Setup Flask
-- [ ] Setup Sql-Alchemy
+- [x] Setup Sql-Alchemy
+- [x] Setup User authentication route
+- [ ] Setup Article Post routes
+- [ ] Add Support for sending and storing photos
+- [ ] Setup up for production deployment
+- [ ] Configure with docker for speedy updates
+- [ ] Setup and deploy on AWS
 
 ## Dependencies Used in the Making of this Server ...
+Originally I was using
   - Flask
   - Marshmallow
   - SQLAlchemy  
+  
+However I found a very thorough guide from Flask that talks about building and deploying production-level Flask applications and have sinced been building my server that way. Now I am Using:
+  - Flask
+  - SQLite3
+  - Werkzeug Security
+  - Flask Blueprints for routing
