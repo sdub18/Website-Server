@@ -3,17 +3,18 @@ import functools
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
-from werkzeug.security import check_password_hash
+from werkzeug.security import check_password_hash, generate_password_hash
 
-from flaskr.db import get_db
+from website_server.db import get_db
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
-    if method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    if request.method == 'POST':
+        data = request.get_json()
+        username = data['username']
+        password = data['password']
         db = get_db()
         error = None
 
@@ -33,11 +34,11 @@ def register():
                 (username, generate_password_hash(password))
             )
             db.commit()
-            return 'Success'
+            return 'Success, {}'.format(username)
 
         flash(error)
 
-    return 'Success'
+    return error
 
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
@@ -70,7 +71,7 @@ def load_logged_in_user():
     user_id = session.get('user_id')
 
     if user_id is None:
-        g.user = teardown_appcontext
+        g.user = None
     else:
         g.user = get_db().execute(
             'SELECT * FROm user WHERE id = ?' (user_id,)
