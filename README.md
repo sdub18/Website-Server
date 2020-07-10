@@ -19,6 +19,7 @@ Great question. While the goal is to make this my actual backend, I really think
 - [ ] Setup up for production deployment
 - [ ] Configure with docker for speedy updates
 - [ ] Setup and deploy on AWS
+- [ ] Setup Redudant Servers for stronger reliability
 
 ## Dependencies Used in the Making of this Server ...
 Originally I was using
